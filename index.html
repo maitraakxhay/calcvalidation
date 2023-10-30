@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calc</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        main{
+            width: 100vw;
+            height: 100vh;
+            /* border: 2px solid red; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        section{
+            text-align: center;
+            width: 500px;
+            height: 350px;
+            background-color: lightgreen;
+            padding: 5px;
+            border-radius: 80px;
+            border: 10px dotted lightseagreen;
+            font-family: cursive;
+        }
+        input{
+            border: 5px double lightcoral;
+            padding: 2px;
+            border-radius: 8px;
+            width: 100px;
+            font-family: cursive;
+
+        }
+        select{
+            border: 5px double lightcoral;
+            padding: 2px;
+            border-radius: 8px;
+            width: 70px;
+            font-family: cursive;
+        }
+        
+    </style>
+</head>
+<body>
+    <main>
+        <section>
+            Enter Your First Number &nbsp;&nbsp;&nbsp; :
+                    <input type="number" id="dataone">  
+                        <br><br>
+                    Enter Your Second Number :
+                    <input type="number" id="datatwo">  <br><br>
+                    Choose Maths Operator :
+                    <select id="operator">
+                        <option value="add" id="add">Add</option>
+                        <option value="minus" id="minus">Minus</option>
+                        <option value="multiply" id="multiply">Multiply</option>
+                        <option value="divide" id="divide">Divide</option>
+                    </select>
+                    <br><br>
+                    <input type="button" value="Calc" id="calculate" onclick="calculate()"><br><br>
+                        <h4 style="text-align: center;">Result <br>
+                            <input id="result" style="text-align: center;"></h4>
+        </section>
+    </main>
+
+    <script>
+
+
+        function calculate(){
+            let val1 = parseInt(document.getElementById("dataone").value);
+            let val2 = parseInt(document.getElementById("datatwo").value);
+            let operator = document.getElementById("operator").value;
+            document.getElementById("result").value = operate(val1,val2,operator);
+            // console.log(operator);
+
+        }
+
+        function operate(val1,val2,operator){
+            if(operator == 'add'){
+                return val1 + val2;
+            }
+            else if(operator == 'minus'){
+                return val1 - val2;
+            }
+            else if(operator == 'multiply'){
+                return val1 * val2;
+            }
+            else if(operator == 'divide'){
+                return val1 / val2;
+            }
+        }
+
+
+
+        // let num1 = parseInt(document.getElementById("dataone").value);
+        // let num2 = parseInt(document.getElementById("datatwo").value);
+        // let select = document.querySelector("option");
+        // let result = num1.select.value + num2.select.value;
+        // document.getElementById("result").value = result;
+
+    </script>
+</body>
+</html>
